@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class State {
     private static String[] instructions;
     private static String[] currInstruction;
-    //private static CommandList commandList;
+    private static CommandList commandList;
     private static int defaultDelay;
     private static boolean delayOverride;
     private static List<Byte> file;
@@ -52,7 +52,7 @@ public class State {
         defaultDelay  = 0;
         delayOverride = false;
 
-        //commandList = CommandList.newInstance();
+        commandList = CommandList.newInstance();
         currInstruction = new String[2];
     }
     
