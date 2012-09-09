@@ -28,7 +28,7 @@ public class String implements Command {
             if ((int) c >= 65 && (int) c <= 90) {
                 // Switch capital letters
                 shiftByte = 0x02;
-			} else {
+            } else {
                 switch (c) {
                 case '~':
                 case '!':

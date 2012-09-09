@@ -38,7 +38,7 @@ public class State {
      */
     public static State newInstance(String inputString, String outFile) {
     	if (INSTANCE == null)
-    		INSTANCE = new State(inputString, outFile);
+            INSTANCE = new State(inputString, outFile);
     	
     	return INSTANCE;
     }
@@ -47,8 +47,8 @@ public class State {
      * Constructor is private on purpose. <i>Do not use.</i>
      */
     private State(String inputString, String outFile) {
-		inputString  = inputString.replaceAll("\\r", ""); // CRLF Fix
-		instructions = inputString.split("\n");
+        inputString  = inputString.replaceAll("\\r", ""); // CRLF Fix
+        instructions = inputString.split("\n");
 
         file = new ArrayList<Byte>();
         this.outFile = outFile;
@@ -320,7 +320,7 @@ public class State {
                     addFunctionKeyToFile(currInstruction[0]);
                     addByteToFile(0x00);
                 } else
-				    throw new Exception();
+                    throw new Exception();
 
                 // Default delay between commands
                 if (!delayOverride & defaultDelay != 0x00) {

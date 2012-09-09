@@ -13,7 +13,7 @@ public class DefaultDelay implements Command {
     public final java.lang.String name    = "DEFAULT_DELAY";
     public final java.lang.String altName = "DEFAULTDELAY";
     public final java.lang.String help    = name + " | " + altName
-            + " [Time in milliseconds * 10]";
+                                          + " [Time in milliseconds * 10]";
 
     @Override
     public void action(State state, java.lang.String args) {

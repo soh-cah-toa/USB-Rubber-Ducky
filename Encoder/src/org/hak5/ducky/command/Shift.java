@@ -13,8 +13,8 @@ public class Shift implements Command {
     public final java.lang.String name    = "SHIFT";
     public final java.lang.String altName = "";
     public final java.lang.String help    = name
-                + " [ DELETE | HOME | INSERT | PAGEUP | PAGEDOWN | (WINDOWS | GUI)\n"
-                + "         | (UPARROW | DOWNARROW |LEFTARROW | RIGHTARROW) | TAB]";
+        + " [ DELETE | HOME | INSERT | PAGEUP | PAGEDOWN | (WINDOWS | GUI)\n"
+        + "         | (UPARROW | DOWNARROW |LEFTARROW | RIGHTARROW) | TAB]";
 
     @Override
     public void action(State state, java.lang.String args) {

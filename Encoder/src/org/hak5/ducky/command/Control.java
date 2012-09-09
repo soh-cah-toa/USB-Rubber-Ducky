@@ -26,11 +26,11 @@ public class Control implements Command {
             if (state.isFunctionKey(args))
                 state.addFunctionKeyToFile(args);
             else
-				state.addCharToFile(args.charAt(0));
-		else
-			state.addByteToFile(0x00);
+                state.addCharToFile(args.charAt(0));
+        else
+            state.addByteToFile(0x00);
 
-		state.addByteToFile(0x01);
+        state.addByteToFile(0x01);
     }
     
     @Override
