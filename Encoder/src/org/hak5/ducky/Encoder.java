@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import java.util.ListIterator;
+
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.rtf.RTFEditorKit;
@@ -12,13 +14,20 @@ import javax.swing.text.rtf.RTFEditorKit;
 // FIXME BREAK and PLAY both have PAUSE as an alias. One has to go.
 
 /**
- * Entry point to <code>duckencoder.jar</code>. Parses command-line options
- * before starting the state machine that is the interpreter.
+ * Parses command-line options before starting the state machine that is the
+ * interpreter.
  *
  * @author Jason Appelbaum
  * @author Kevin Polulak
  */
 public class Encoder {
+	private static final String VERSION = "2.0";
+	
+	/**
+	 * Main entry point to <code>duckencoder.jar<code>.
+	 * 
+	 * @param args command-line arguments
+	 */
     public static void main(String[] args) {
         String inputFile  = null;
         String outputFile = null;
@@ -98,50 +107,33 @@ public class Encoder {
 
             State state = State.newInstance(fileText,
                                            (outputFile == null) ? "inject.bin"
-                                            : outputFile);
+                                           : outputFile);
 
             state.begin();
         }
     }
 
+    /**
+     * Displays general help information on command-line arguments and valid
+     * DuckyScript commands. Called when <code>--help</code> is used and when
+     * either no arguments or an invalid argument is given.
+     */
     public static void displayHelp() {
-        // TODO Re-implement this to use help messages associated with soon
-        //      to come Command objects.
-        String message = "Hak5 Duck Encoder 2.0\n\n"
-            + "Usage: duckencoder -i [file ..]\t\t\tencode specified file\n"
-            + "   or: duckencoder -i [file ..] -o [file ..]\tencode to specified file\n"
+        StringBuilder message = new StringBuilder();
+        
+        message.append("Hak5 Duck Encoder " + VERSION + "\n\n"
+            + "Usage: java -jar duckencoder.jar -i [file]\t\t\tEncode specified file\n"
+            + "   Or: java -jar duckencoder.jar -i [file] -o [file]\tEncode to specified file\n"
             + "\nArguments:\n"
             + "   -i [file] \t\tInput DuckyScript file\n"
             + "   -o [file] \t\tOutput file\n"
-            + "\nScript Commands:\n"
-            + "   ALT [END | (ESCAPE | ESC) | F1...F12 | Single Char | SPACE | TAB]\n"
-            + "   BREAK | PAUSE\n"
-            + "   CAPSLOCK\n"
-            + "   CONTROL | CTRL [(BREAK | PAUSE) | F1...F12 | (ESCAPE | ESC) | Single Char]\n"
-            + "   DEFAULT_DELAY | DEFAULTDELAY [Time in millisecond * 10]\n"
-            + "   DELAY [Time in millisecond * 10]\n"
-            + "   DELETE\n"
-            + "   DOWNARROW | DOWN\n"
-            + "   END\n"
-            + "   ESCAPE | ESC\n"
-            + "   F1...F12\n"
-            + "   HOME\n"
-            + "   INSERT\n"
-            + "   LEFTARROW | LEFT\n"
-            + "   MENU | APP\n"
-            + "   NUMLOCK\n"
-            + "   PAGEDOWN\n"
-            + "   PAGEUP\n"
-            + "   PRINTSCREEN\n"
-            + "   REM\n"
-            + "   RIGHTARROW | RIGHT\n"
-            + "   SCROLLLOCK\n"
-            + "   SHIFT [ DELETE | HOME | INSERT | PAGEUP | PAGEDOWN | (WINDOWS | GUI)\n"
-            + "         | (UPARROW | DOWNARROW |LEFTARROW | RIGHTARROW) | TAB]\n"
-            + "   SPACE\n"
-            + "   STRING [a...z A...Z 0..9 !...) `~ += _- \"\' :; <, >. ?/ \\|]\n"
-            + "   TAB\n" + "   UPARROW | UP\n" + "   WINDOWS | GUI\n";
-
-        System.out.println(message);
+            + "\nScript Commands:\n");
+        
+        ListIterator<Command> cmdListIter = CommandList.newInstance().listIterator();
+        
+        while (cmdListIter.hasNext())
+        	message.append(cmdListIter.next().getHelp() + "\n");
+        
+        System.out.println(message.toString());
     }
 }
