@@ -8,9 +8,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * @author Jason Appelbaum
- * @author Kevin Polulak
- * 
  * State machine that acts as the DuckyScript interpreter. Parses input
  * file and acts on each keyword according to a set of commands. Each command 
  * then operates somehow on the state.
@@ -18,6 +15,9 @@ import java.util.ArrayList;
  * Implemented as a singleton object since the interpreter can only have one
  * state. Therefore, the <code>new</code> operator will throw an exception. The
  * newInstance method should be used instead.
+ *
+ * @author Jason Appelbaum
+ * @author Kevin Polulak
  */
 public class State {
     private static String[] instructions;

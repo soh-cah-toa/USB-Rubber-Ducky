@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>VOLUMEDOWN</code> command. Represents the Volume
  * Down key present on some keyboards used to turn the speaker volume down.
+ *
+ * @author Kevin Polulak
  */
 public class VolumeDown implements Command {
     public final java.lang.String name    = "VOLUMEDOWN";

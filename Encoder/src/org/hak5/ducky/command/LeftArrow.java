@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>LEFTARROW/LEFT</code> command. Represents the\
  * Left Arrow key used to move the cursor to the left.
+ *
+ * @author Kevin Polulak
  */
 public class LeftArrow implements Command {
     public final java.lang.String name    = "LEFTARROW";

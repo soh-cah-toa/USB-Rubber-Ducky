@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>PAGEDOWN</code> command. Represents the PgDn key
  * used to scroll down in documents.
+ *
+ * @author Kevin Polulak
  */
 public class PageDown implements Command {
     public final java.lang.String name    = "PAGEDOWN";

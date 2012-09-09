@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>DELETE</code> command. Represents the Backspace
  * key used to delete the previous input text.
+ *
+ * @author Kevin Polulak
  */
 public class Delete implements Command {
     public final java.lang.String name    = "DELETE";

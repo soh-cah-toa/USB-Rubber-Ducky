@@ -12,11 +12,11 @@ import javax.swing.text.rtf.RTFEditorKit;
 // FIXME BREAK and PLAY both have PAUSE as an alias. One has to go.
 
 /**
- * @author Jason Appelbaum
- * @author Kevin Polulak
- * 
  * Entry point to <code>duckencoder.jar</code>. Parses command-line options
  * before starting the state machine that is the interpreter.
+ *
+ * @author Jason Appelbaum
+ * @author Kevin Polulak
  */
 public class Encoder {
     public static void main(String[] args) {

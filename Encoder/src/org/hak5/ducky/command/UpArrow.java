@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>UPARROW/UP</code> command. Represents the Up
  * Arrow key used to move the cursor up.
+ *
+ * @author Kevin Polulak
  */
 public class UpArrow implements Command {
     public final java.lang.String name    = "UPARROW";

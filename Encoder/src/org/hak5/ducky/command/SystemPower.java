@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>SYSTEMPOWER</code> command. Used to power-off
  * the machine.
+ *
+ * @author Kevin Polulak
  */
 public class SystemPower implements Command {
     public final java.lang.String name    = "SYSTEMPOWER";

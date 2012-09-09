@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>MUTE</code> command. Represents the Mute key
  * present on some keyboards meant to turn of the speaker volume.
+ *
+ * @author Kevin Polulak
  */
 public class Mute implements Command {
     public final java.lang.String name    = "MUTE";

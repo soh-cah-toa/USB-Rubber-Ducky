@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>END</code> command. Represents the End key used
  * to move the cursor to the end of current line.
+ *
+ * @author Kevin Polulak
  */
 public class End implements Command {
     public final java.lang.String name    = "END";

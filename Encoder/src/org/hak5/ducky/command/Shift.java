@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>SHIFT</code> command. Represents the Shift key
  * used to type uppercase characters.
+ *
+ * @author Kevin Polulak
  */
 public class Shift implements Command {
     public final java.lang.String name    = "SHIFT";

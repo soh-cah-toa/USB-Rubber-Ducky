@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>RIGHTARROW/RIGHT</code> command. Represents the
  * Right Arrow key used to move the cursor to the right.
+ *
+ * @author Kevin Polulak
  */
 public class RightArrow implements Command {
     public final java.lang.String name    = "RIGHTARROW";

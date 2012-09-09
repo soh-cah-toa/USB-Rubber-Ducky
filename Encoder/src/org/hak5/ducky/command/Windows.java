@@ -4,11 +4,11 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>WINDOWS/GUI</code> command. Represents the
  * Windows key ("Meta" or "Super" key on some systems) used to toggle the
  * Start Menu and as a shortcut modifier.
+ *
+ * @author Kevin Polulak
  */
 public class Windows implements Command {
     public final java.lang.String name    = "WINDOWS";

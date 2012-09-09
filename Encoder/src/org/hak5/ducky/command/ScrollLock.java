@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>SCROLLLOCK</code> command. Represents the ScrLk
  * key used to modify the arrow keys to scroll the contents of the text window.
+ *
+ * @author Kevin Polulak
  */
 public class ScrollLock implements Command {
     public final java.lang.String name    = "SCROLLLOCK";

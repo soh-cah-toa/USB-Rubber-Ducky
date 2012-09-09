@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>BREAK/PAUSE</code> command. Represents the
  * Break or Pause key used to pause the screen output.
+ *
+ * @author Kevin Polulak
  */
 public class Break implements Command {
     public final java.lang.String name    = "BREAK";

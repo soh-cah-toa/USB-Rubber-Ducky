@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>PRINTSCREEN</code> command. Represents the
  * PrtScn key used to copy a bitmap screenshot of the desktop to the clipboard.
+ *
+ * @author Kevin Polulak
  */
 public class PrintScreen implements Command {
     public final java.lang.String name    = "PRINTSCREEN";

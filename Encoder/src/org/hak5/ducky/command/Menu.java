@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>MENU/APP</code> command. Brings up the context
  * menu, similar to a right-click.
+ *
+ * @author Kevin Polulak
  */
 public class Menu implements Command {
     public final java.lang.String name    = "MENU";

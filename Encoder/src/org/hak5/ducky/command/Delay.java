@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>DELAY</code> command. Creates of moment of pause
  * between the next command. Time is in microseconds.
+ * 
+ * @author Kevin Polulak
  */
 public class Delay implements Command {
     public final java.lang.String name    = "DELAY";

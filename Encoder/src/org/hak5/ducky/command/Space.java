@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>SPACE</code> command. Represents the Spacebar
  * key used to insert a space character.
+ *
+ * @author Kevin Polulak
  */
 public class Space implements Command {
     public final java.lang.String name    = "SPACE";

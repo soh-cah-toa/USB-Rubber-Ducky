@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>PLAY/PAUSE</code> command. Represents the Play
  * key present on some keyboards used to play or pause music.
+ *
+ * @author Kevin Polulak
  */
 public class Play implements Command {
     public final java.lang.String name    = "PLAY";

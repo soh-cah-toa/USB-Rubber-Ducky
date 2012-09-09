@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>ALT</code> command. Represents the Alt key used
  * to change the function of other keypresses as a shortcut modifier.
+ *
+ * @author Kevin Polulak
  */
 public class Alt implements Command {
     public final java.lang.String name    = "ALT";

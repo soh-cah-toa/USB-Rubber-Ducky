@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>ESCAPE/ESC</code> command. Represents the Esc
  * key used to initiate an escape sequence.
+ *
+ * @author Kevin Polulak
  */
 public class Escape implements Command {
     public final java.lang.String name    = "ESCAPE";

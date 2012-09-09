@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>CONTROL/CTRL</code> command. Represents the Ctrl
  * key used to change the function of other keypresses as a shortcut modifier.
+ *
+ * @author Kevin Polulak
  */
 public class Control implements Command {
     public final java.lang.String name    = "CONTROL";

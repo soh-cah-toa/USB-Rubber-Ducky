@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>DEFAULT_DELAY/DEFAULTDELAY</code> command.
  * Defines the number of microseconds to wait between each command.
+ *
+ * @author Kevin Polulak
  */
 public class DefaultDelay implements Command {
     public final java.lang.String name    = "DEFAULT_DELAY";

@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>INSERT</code> command. Represents the Insert
  * key used to toggle insert/override text input modes.
+ *
+ * @author Kevin Polulak
  */
 public class Insert implements Command {
     public final java.lang.String name    = "INSERT";

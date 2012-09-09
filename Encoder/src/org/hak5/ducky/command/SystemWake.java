@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>SYSTEMWAKE</code> command. Used to wake the
  * computer from sleep mode.
+ *
+ * @author Kevin Polulak
  */
 public class SystemWake implements Command {
     public final java.lang.String name    = "SYSTEMWAKE";

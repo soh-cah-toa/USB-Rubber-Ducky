@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>STRING</code> command. Used to input a character
  * string.
+ *
+ * @author Kevin Polulak
  */
 public class String implements Command {
     public java.lang.String name    = "STRING";

@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>DOWNARROW/DOWN</code> command. Represents the
  * Down Arrow key used to move the cursor down.
+ *
+ * @author Kevin Polulak
  */
 public class DownArrow implements Command {
     public final java.lang.String name    = "DOWNARROW";

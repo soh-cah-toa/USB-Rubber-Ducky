@@ -3,14 +3,14 @@ package org.hak5.ducky;
 import java.util.ArrayList;
 
 /**
- * @author Kevin Polulak
- * 
  * Command table holding an entry for every valid command. The CommandList
  * is searched through by the interpreter for a match.
  * 
  * Implemented as a singleton object since the interpreter should never use
  * more than one list. Therefore, the <code>new</code> operator will
  * throw an exception. The newInstance method should be used instead.
+ * 
+ * @author Kevin Polulak
  */
 public class CommandList {
     private ArrayList<Command> commands;

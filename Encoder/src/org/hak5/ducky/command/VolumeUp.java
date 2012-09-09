@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>VOLUMEUP</code> command. Represents the Volume
  * Up key present on some keyboards used to turn the speaker volume up.
+ *
+ * @author Kevin Polulak
  */
 public class VolumeUp implements Command {
     public final java.lang.String name    = "VOLUMEUP";

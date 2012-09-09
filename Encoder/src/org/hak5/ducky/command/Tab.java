@@ -4,10 +4,10 @@ import org.hak5.ducky.State;
 import org.hak5.ducky.Command;
 
 /**
- * @author Kevin Polulak
- *
  * Implementation of the <code>TAB</code> command. Represents the Tab key used
  * to advance the cursor to the next tab stop.
+ *
+ * @author Kevin Polulak
  */
 public class Tab implements Command {
     public final java.lang.String name    = "TAB";
