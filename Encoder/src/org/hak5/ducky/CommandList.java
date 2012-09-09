@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * more than one list. Therefore, the <code>new</code> operator will
  * throw an exception. The newInstance method should be used instead.
  */
-public final class CommandList {
+public class CommandList {
     private ArrayList<Command> commands;
     private static final CommandList INSTANCE = new CommandList();
 
