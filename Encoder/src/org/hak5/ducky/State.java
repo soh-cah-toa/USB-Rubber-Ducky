@@ -1,5 +1,9 @@
 package org.hak5.ducky;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -272,5 +276,89 @@ public class State {
 		}
 	}
     
-    public void begin() { }
+	/**
+	 * Starts state machine that parses input DuckyScript file. Reads file
+	 * line by line and checks the valid command list for a match. If found,
+	 * it calls the appropriate <code>action</code> method that executes the
+	 * command. 
+	 */
+    public void begin() {
+        // Loop through file contents, line by line
+		for (int i = 0; i < instructions.length; i++) {
+			try {
+				String commentCheck = instructions[i].substring(0, 2);
+
+                // Ignore C++ style comments
+				if (commentCheck.equals("//"))
+					continue;
+
+                // Get command name from beginning of line
+				currInstruction = instructions[i].split(" ", 2);
+				currInstruction[0].trim();
+
+                // Ignore excess command arguments
+				if (currInstruction.length == 2)
+					currInstruction[1].trim();
+
+                // Find a match from the command list
+                for (int j = 0; j < commandList.size(); j++) {
+                    Command cmd = commandList.get(j);
+                    String  instr = currInstruction[0];
+                    System.out.println("cmd.name = " + cmd.getName());
+                    if (instr.equals(cmd.getName())
+                            || instr.equals(cmd.getAltName())) {
+
+                        // Process command
+                        cmd.action(this, currInstruction[1]);
+                    }
+                }
+
+                // TODO Process REM somehow (maybe empty action() method)
+
+				if (isFunctionKey(currInstruction[0])) {
+					// Function keys
+                    addFunctionKeyToFile(currInstruction[0]);
+                    addByteToFile(0x00);
+				} else {
+					throw new Exception();
+				}
+
+				// Default delay between commands
+				if (!delayOverride & defaultDelay != 0x00) {
+					while (defaultDelay > 0) {
+                        addByteToFile(0x00);
+
+						if (defaultDelay > 255) {
+                            addByteToFile(0xFF);
+							defaultDelay = defaultDelay - 255;
+						} else {
+                            addByteToFile(defaultDelay);
+							defaultDelay = 0;
+						}
+					}
+				}
+			} catch (Exception e) {
+				String errMsg = "[ERROR] Invalid command on line " + (i + 1);
+				System.err.println(errMsg);
+			}
+		}
+
+		// Write byte array to file
+		byte[] data = new byte[file.size()];
+
+		for (int i = 0; i < file.size(); i++)
+			data[i] = file.get(i);
+
+		try {
+			FileOutputStream fos = new FileOutputStream(new File(outFile));
+
+			fos.write(data);
+			fos.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			System.err.print("[ERROR] Failed to create output file: " + outFile);
+        } catch (Exception e) {
+			System.err.print("[ERROR] Failed to write output file: " + outFile);
+		}
+    }
 }
