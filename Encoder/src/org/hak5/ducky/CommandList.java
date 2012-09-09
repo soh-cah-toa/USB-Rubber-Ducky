@@ -37,7 +37,36 @@ public class CommandList {
         commands.add(new org.hak5.ducky.command.CapsLock());
         commands.add(new org.hak5.ducky.command.Control());
         commands.add(new org.hak5.ducky.command.DefaultDelay());
+        commands.add(new org.hak5.ducky.command.Delay());
+        commands.add(new org.hak5.ducky.command.Delete());
+        commands.add(new org.hak5.ducky.command.DownArrow());
+        commands.add(new org.hak5.ducky.command.End());
+        commands.add(new org.hak5.ducky.command.Enter());
+        commands.add(new org.hak5.ducky.command.Escape());
+        commands.add(new org.hak5.ducky.command.Home());
+        commands.add(new org.hak5.ducky.command.Insert());
+        commands.add(new org.hak5.ducky.command.LeftArrow());
+        commands.add(new org.hak5.ducky.command.Menu());
+        commands.add(new org.hak5.ducky.command.Mute());
+        commands.add(new org.hak5.ducky.command.NumLock());
+        commands.add(new org.hak5.ducky.command.PageDown());
+        commands.add(new org.hak5.ducky.command.PageUp());
+        commands.add(new org.hak5.ducky.command.Play());
+        commands.add(new org.hak5.ducky.command.PrintScreen());
+        commands.add(new org.hak5.ducky.command.RightArrow());
+        commands.add(new org.hak5.ducky.command.ScrollLock());
+        commands.add(new org.hak5.ducky.command.Shift());
+        commands.add(new org.hak5.ducky.command.Space());
+        commands.add(new org.hak5.ducky.command.Stop());
         commands.add(new org.hak5.ducky.command.String());
+        commands.add(new org.hak5.ducky.command.SystemPower());
+        commands.add(new org.hak5.ducky.command.SystemSleep());
+        commands.add(new org.hak5.ducky.command.SystemWake());
+        commands.add(new org.hak5.ducky.command.Tab());
+        commands.add(new org.hak5.ducky.command.UpArrow());
+        commands.add(new org.hak5.ducky.command.VolumeDown());
+        commands.add(new org.hak5.ducky.command.VolumeUp());
+        commands.add(new org.hak5.ducky.command.Windows());
 
         commands.trimToSize();
     }
