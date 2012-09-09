@@ -1,11 +1,12 @@
 package org.hak5.ducky;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * State machine that acts as the DuckyScript interpreter. Parses input
@@ -300,12 +301,14 @@ public class State {
                 if (currInstruction.length == 2)
                     currInstruction[1].trim();
 
-                // Find a match from the command list
-                for (int j = 0; j < commandList.size(); j++) {
-                    Command cmd = commandList.get(j);
-                    String  instr = currInstruction[0];
-                    
-                    if (instr.equals(cmd.getName())
+                ListIterator<Command> cmdListIter = commandList.listIterator();
+
+                // Find a match from the command list                
+                while (cmdListIter.hasNext()) {
+                	Command cmd   = cmdListIter.next();
+                	String  instr = currInstruction[0];
+                	
+                	if (instr.equals(cmd.getName())
                             || instr.equals(cmd.getAltName())) {
 
                         // Process command
