@@ -19,13 +19,13 @@ public class String implements Command {
     public void action(State state, java.lang.String args) {
         // XXX Could state.getCurrentInstruction() be replaced with args?
         for (int j = 0; j < state.getCurrentInstruction().length(); j++) {
-			char c = args.charAt(j);
+            char c = args.charAt(j);
             state.addCharToFile(c);
 
-			// Auto shift
-			byte shiftByte = 0x00;
+            // Auto shift
+            byte shiftByte = 0x00;
 
-			if ((int) c >= 65 && (int) c <= 90) {
+            if ((int) c >= 65 && (int) c <= 90) {
                 // Switch capital letters
                 shiftByte = 0x02;
 			} else {
@@ -55,9 +55,9 @@ public class String implements Command {
                     shiftByte = 0x02;
                     break;
                 }
-			}
+            }
 
-			state.addByteToFile(shiftByte);
+            state.addByteToFile(shiftByte);
         }
     }
     
