@@ -1,6 +1,7 @@
 package org.hak5.ducky;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 /**
  * Command table holding an entry for every valid command. The CommandList
@@ -65,5 +66,15 @@ public class CommandList {
             throw new IndexOutOfBoundsException();
         else
             return commands.get(index);
+    }
+    
+    /**
+     * Returns a list iterator over the Command elements in this list (in
+     * proper sequence).
+     * 
+     * @return a list iterator over the Command elements in this list
+     */
+    public ListIterator<Command> listIterator() {
+    	return commands.listIterator();
     }
 }
