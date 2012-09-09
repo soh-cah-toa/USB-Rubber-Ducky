@@ -1,0 +1,9 @@
+!SESSION 2012-09-09 13:59:11.303 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_07
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2012-09-09 17:22:26.859
+!MESSAGE Failed to open search index.
