@@ -9,7 +9,7 @@ import org.hak5.ducky.Command;
  * Implementation of the <code>ALT</code> command. Represents the Alt key used
  * to change the function of other keypresses as a shortcut modifier.
  */
-public final class Alt implements Command {
+public class Alt implements Command {
     public final java.lang.String name    = "ALT";
     public final java.lang.String altName = "";
     public final java.lang.String help    = name

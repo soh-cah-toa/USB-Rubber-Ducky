@@ -9,7 +9,7 @@ import org.hak5.ducky.Command;
  * Implementation of the <code>CONTROL/CTRL</code> command. Represents the Ctrl
  * key used to change the function of other keypresses as a shortcut modifier.
  */
-public final class Control implements Command {
+public class Control implements Command {
     public final java.lang.String name    = "CONTROL";
     public final java.lang.String altName = "CTRL";
     public final java.lang.String help    = name + " | " + altName

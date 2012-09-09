@@ -9,7 +9,7 @@ import org.hak5.ducky.Command;
  * Implementation of the <code>CAPSLOCK</code> command. Represents the Caps
  * Lock key used to switch text input to uppercase.
  */
-public final class CapsLock implements Command {
+public class CapsLock implements Command {
     public final java.lang.String name    = "CAPSLOCK";
     public final java.lang.String altName = "";
     public final java.lang.String help    = name;

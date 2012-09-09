@@ -9,7 +9,7 @@ import org.hak5.ducky.Command;
  * Implementation of the <code>STRING</code> command. Used to input a character
  * string.
  */
-public final class String implements Command {
+public class String implements Command {
     public java.lang.String name    = "STRING";
     public java.lang.String altName = "";
     public java.lang.String help    = name + " [a...z A...Z 0..9 !...) "
