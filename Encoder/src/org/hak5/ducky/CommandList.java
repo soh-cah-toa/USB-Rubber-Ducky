@@ -30,6 +30,13 @@ public class CommandList {
      */
     private CommandList() {
         commands = new ArrayList<Command>();
+        
+        commands.add(new org.hak5.ducky.command.Alt());
+        commands.add(new org.hak5.ducky.command.Break());
+        commands.add(new org.hak5.ducky.command.CapsLock());
+        commands.add(new org.hak5.ducky.command.Control());
+        commands.add(new org.hak5.ducky.command.DefaultDelay());
+        commands.add(new org.hak5.ducky.command.String());
 
         commands.trimToSize();
     }
