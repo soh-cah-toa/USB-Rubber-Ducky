@@ -93,10 +93,10 @@ public class State {
 
     /**
      * Toggles whether or not to override the delay value.
-     * 
+     *
      * @param value boolean true overrides the delay, false restores it
      *
-	 * @see getDelayOverride
+     * @see getDelayOverride
      */
     public void setDelayOverride(boolean value) {
         delayOverride = value;
@@ -115,7 +115,7 @@ public class State {
     
     /**
      * Writes a single byte value to output file.
-     * 
+     *
      * @param value value to write (must be byte-castable)
      */
     public void addByteToFile(Object value) {
@@ -124,10 +124,10 @@ public class State {
 
     /**
      * Writes a single character value to output file.
-     * 
+     *
      * @param c character to write
      */
-	public void addCharToFile(char c) {
+    public void addCharToFile(char c) {
         byte value = (byte) 0x99;
 
         if ((int) c >= 97 && (int) c <= 122)     // Upper-case letters
@@ -199,11 +199,11 @@ public class State {
         addByteToFile(value);
     }
 
-	/**
-	 * Writes function key value to output file.
-	 * 
-	 * @param fKey string to write
-	 */
+    /**
+     * Writes function key value to output file.
+     *
+     * @param fKey string to write
+     */
     public void addFunctionKeyToFile(String fKey) {
         byte value = (byte) 0x99;
 
@@ -249,13 +249,13 @@ public class State {
         addByteToFile(value);
     }
 
-	/**
-	 * Tests if the given string is a function key (for example, F1, F2, F3).
-	 *
-	 * @param possibleFKey string to test
-	 * 
-	 * @return boolean true indicates string is a function key, otherwise false
-	 */
+    /**
+     * Tests if the given string is a function key (for example, F1, F2, F3).
+     *
+     * @param possibleFKey string to test
+     *
+     * @return boolean true indicates string is a function key, otherwise false
+     */
     public boolean isFunctionKey(String possibleFKey) {
         switch (possibleFKey.toUpperCase()) {
         case "F1":
@@ -276,12 +276,12 @@ public class State {
         }
     }
     
-	/**
-	 * Starts state machine that parses input DuckyScript file. Reads file
-	 * line by line and checks the valid command list for a match. If found,
-	 * it calls the appropriate <code>action</code> method that executes the
-	 * command. 
-	 */
+    /**
+     * Starts state machine that parses input DuckyScript file. Reads file
+     * line by line and checks the valid command list for a match. If found,
+     * it calls the appropriate <code>action</code> method that executes the
+     * command. 
+     */
     public void begin() {
         // Loop through file contents, line by line
         for (int i = 0; i < instructions.length; i++) {
