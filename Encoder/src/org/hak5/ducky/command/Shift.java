@@ -18,7 +18,7 @@ public class Shift implements Command {
 
     @Override
     public void action(State state, java.lang.String args) {
-        if (args.length() != 1) {
+        if (state.getCurrentLine().length != 1) {
             if (args.equals("HOME"))
                 state.addByteToFile(0x4A);
             else if (args.equals("TAB"))

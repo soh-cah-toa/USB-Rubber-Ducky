@@ -17,7 +17,7 @@ public class Windows implements Command {
 
     @Override
     public void action(State state, java.lang.String args) {
-        if (args.length() == 1) {
+        if (state.getCurrentLine().length == 1) {
             state.addByteToFile(0xE3);
             state.addByteToFile(0x00);
         } else {
