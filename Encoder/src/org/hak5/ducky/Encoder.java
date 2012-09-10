@@ -35,7 +35,7 @@ public class Encoder {
         // Display help message by default without arguments
         if (args.length == 0) {
             displayHelp();
-            System.exit(1);
+            System.exit(0);
         }
 
         // TODO Consider using Scanner class to parse arguments
@@ -122,17 +122,20 @@ public class Encoder {
         StringBuilder message = new StringBuilder();
         
         message.append("Hak5 Duck Encoder " + VERSION + "\n\n"
-            + "Usage: java -jar duckencoder.jar -i [file]\t\t\tEncode specified file\n"
-            + "   Or: java -jar duckencoder.jar -i [file] -o [file]\tEncode to specified file\n"
+            + "Usage:\n"
+        	+ "    java -jar duckencoder.jar -i [file]\t\t\tEncode specified file\n"
+            + "    java -jar duckencoder.jar -i [file] -o [file]\tEncode to specified file\n"
             + "\nArguments:\n"
-            + "   -i [file] \t\tInput DuckyScript file\n"
-            + "   -o [file] \t\tOutput file\n"
+            + "   -i [file]\tInput DuckyScript file\n"
+            + "   -o [file]\tOutput file\n"
             + "\nScript Commands:\n");
         
         ListIterator<Command> cmdListIter = CommandList.newInstance().listIterator();
         
+        // FIXME This command output is way too jumbled. Make it pretty.
+        
         while (cmdListIter.hasNext())
-        	message.append(cmdListIter.next().getHelp() + "\n");
+        	message.append("   " + cmdListIter.next().getHelp() + "\n");
         
         System.out.println(message.toString());
     }
