@@ -22,7 +22,7 @@ import java.util.ListIterator;
  */
 public class State {
     private static String[] instructions;
-    private static String[] currInstruction;
+    private static String[] currentLine;
     private static CommandList commandList;
     private static int defaultDelay;
     private static boolean delayOverride;
@@ -61,9 +61,18 @@ public class State {
         delayOverride = false;
 
         commandList = CommandList.newInstance();
-        currInstruction = new String[2];
+        currentLine = new String[2];
     }
 
+    /**
+     * Returns the current line being parse as a two-element array.
+     *
+     * @return string array containing text from current line
+     */
+    public String[] getCurrentLine() {
+    	return currentLine;
+    }
+    
     /**
      * Sets the amount of delay to wait between commands.
      * 
@@ -288,19 +297,19 @@ public class State {
                     continue;
 
                 // Get command name from beginning of line
-                currInstruction = instructions[i].split(" ", 2);
-                currInstruction[0].trim();
+                currentLine = instructions[i].split(" ", 2);
+                currentLine[0].trim();
 
                 // Ignore excess command arguments
-                if (currInstruction.length == 2)
-                    currInstruction[1].trim();
+                if (currentLine.length == 2)
+                    currentLine[1].trim();
 
                 ListIterator<Command> cmdListIter = commandList.listIterator();
 
                 // Find a match from the command list                
                 while (cmdListIter.hasNext()) {
                 	Command cmd   = cmdListIter.next();
-                	String  instr = currInstruction[0];
+                	String  instr = currentLine[0];
                 	
                 	if (instr.equals(cmd.getName())
                             || instr.equals(cmd.getAltName())) {
@@ -308,7 +317,7 @@ public class State {
                         // XXX Is it wise to ignore this exception?
                         try {
                             // Process command
-                            cmd.action(this, currInstruction[1]);
+                            cmd.action(this, currentLine[1]);
                         } catch (ArrayIndexOutOfBoundsException e) { // Ignore exception
                         }
                     }
@@ -316,9 +325,9 @@ public class State {
 
                 // TODO Process REM somehow (maybe empty action() method)
 
-                if (isFunctionKey(currInstruction[0])) {
+                if (isFunctionKey(currentLine[0])) {
                     // Function keys
-                    addFunctionKeyToFile(currInstruction[0]);
+                    addFunctionKeyToFile(currentLine[0]);
                     addByteToFile(0x00);
                 }
 

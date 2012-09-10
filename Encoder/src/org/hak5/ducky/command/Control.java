@@ -22,7 +22,7 @@ public class Control implements Command {
             state.addByteToFile(0x29);
         else if (args.equals("PAUSE") || args.equals("BREAK"))
             state.addByteToFile(0x48);
-        else if (args.length() != 1)
+        else if (state.getCurrentLine().length != 1)
             if (state.isFunctionKey(args))
                 state.addFunctionKeyToFile(args);
             else

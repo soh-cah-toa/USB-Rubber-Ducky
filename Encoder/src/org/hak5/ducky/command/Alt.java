@@ -26,7 +26,7 @@ public class Alt implements Command {
                 state.addByteToFile(0x2C);
             else if (args.equals("TAB"))
                 state.addByteToFile(0x2B);
-            else if (args.length() != 1)
+            else if (state.getCurrentLine().length != 1)
                 if (state.isFunctionKey(args))
                     state.addFunctionKeyToFile(args);
 				else
