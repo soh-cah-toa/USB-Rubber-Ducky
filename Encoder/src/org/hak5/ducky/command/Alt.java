@@ -18,9 +18,8 @@ public class Alt implements Command {
     @Override
     public void action(State state, java.lang.String args) {
         // FIXME Make this more extensible by using Command objects
-        if (args.length() != 1) {
-            if (args.equals("ESCAPE")
-                    || args.equals("ESC"))
+        if (state.getCurrentLine().length != 1) {
+            if (args.equals("ESCAPE") || args.equals("ESC"))
                 state.addByteToFile(0x29);
             else if (args.equals("SPACE"))
                 state.addByteToFile(0x2C);
@@ -29,11 +28,11 @@ public class Alt implements Command {
             else if (state.getCurrentLine().length != 1)
                 if (state.isFunctionKey(args))
                     state.addFunctionKeyToFile(args);
-				else
+                else
                     state.addCharToFile(args.charAt(0));
 			else
                 state.addByteToFile(0x00);
-		} else {
+        } else {
             state.addByteToFile(0x00);
         }
 
