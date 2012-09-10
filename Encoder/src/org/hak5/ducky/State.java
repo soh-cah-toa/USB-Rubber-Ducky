@@ -15,7 +15,7 @@ import java.util.ListIterator;
  * 
  * Implemented as a singleton object since the interpreter can only have one
  * state. Therefore, the <code>new</code> operator will throw an exception. The
- * newInstance method should be used instead.
+ * #newInstance method should be used instead.
  *
  * @author Jason Appelbaum
  * @author Kevin Polulak
@@ -35,6 +35,9 @@ public class State {
     /**
      * Returns a new instance of State.
      *
+     * @param  inputString text from input DuckyScript file
+     * @param  outFile     filename to write output to
+     *    
      * @return new State instance, never null
      */
     public static State newInstance(String inputString, String outFile) {
@@ -75,7 +78,7 @@ public class State {
      * 
      * @param value time in microseconds
      *
-     * @see getDefaultDelay
+     * @see #getDefaultDelay()
      */
     public void setDefaultDelay(int value) {
         defaultDelay = value;
@@ -86,7 +89,7 @@ public class State {
      *
      * @return time in microseconds
      *
-     * @see setDefaultDelay
+     * @see #setDefaultDelay
      */
     public int getDefaultDelay() {
         return defaultDelay;
@@ -97,7 +100,7 @@ public class State {
      *
      * @param value boolean true overrides the delay, false restores it
      *
-     * @see getDelayOverride
+     * @see #getDelayOverride
      */
     public void setDelayOverride(boolean value) {
         delayOverride = value;
@@ -108,7 +111,7 @@ public class State {
      * 
      * @return boolean true indicates override is on, false means off
      * 
-     * @see setDelayOverride
+     * @see #setDelayOverride
      */
     public boolean getDelayOverride() {
         return delayOverride;
