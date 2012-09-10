@@ -17,11 +17,8 @@ public class Alt implements Command {
 
     @Override
     public void action(State state, java.lang.String args) {
-        // XXX Use args instead?
-        java.lang.String currInstruction = state.getCurrentInstruction();
-
         // FIXME Make this more extensible by using Command objects
-        if (currInstruction.length() != 1) {
+        if (args.length() != 1) {
             if (args.equals("ESCAPE")
                     || args.equals("ESC"))
                 state.addByteToFile(0x29);
@@ -29,7 +26,7 @@ public class Alt implements Command {
                 state.addByteToFile(0x2C);
             else if (args.equals("TAB"))
                 state.addByteToFile(0x2B);
-            else if (currInstruction.length() != 1)
+            else if (args.length() != 1)
                 if (state.isFunctionKey(args))
                     state.addFunctionKeyToFile(args);
 				else

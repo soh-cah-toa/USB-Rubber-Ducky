@@ -63,15 +63,6 @@ public class State {
         commandList = CommandList.newInstance();
         currInstruction = new String[2];
     }
-    
-    /**
-     * Returns the current instruction being evaluated.
-     * 
-     * @return string representing the current instruction
-     */
-    public String getCurrentInstruction() {
-        return currInstruction[1];
-    }
 
     /**
      * Sets the amount of delay to wait between commands.
