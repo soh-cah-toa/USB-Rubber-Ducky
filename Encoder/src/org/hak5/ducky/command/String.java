@@ -17,8 +17,8 @@ public class String implements Command {
 
     @Override
     public void action(State state, java.lang.String args) {
-        for (int j = 0; j < args.length(); j++) {
-            char c = args.charAt(j);
+        for (int i = 0; i < args.length(); i++) {
+            char c = args.charAt(i);
             state.addCharToFile(c);
 
             // Auto shift
