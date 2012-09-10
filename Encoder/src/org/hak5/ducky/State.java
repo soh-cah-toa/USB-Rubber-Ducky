@@ -122,7 +122,7 @@ public class State {
      *
      * @param value value to write (must be byte-castable)
      */
-    public void addByteToFile(Object value) {
+    public void addByteToFile(int value) {
         file.add((byte) value);
     }
 
@@ -325,8 +325,7 @@ public class State {
                     // Function keys
                     addFunctionKeyToFile(currInstruction[0]);
                     addByteToFile(0x00);
-                } else
-                    throw new Exception();
+                }
 
                 // Default delay between commands
                 if (!delayOverride & defaultDelay != 0x00) {

@@ -57,7 +57,7 @@ public class String implements Command {
                 }
             }
 
-            state.addByteToFile(shiftByte);
+            state.addByteToFile((int) shiftByte);
         }
     }
     
