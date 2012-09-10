@@ -1,0 +1,40 @@
+<project name="duckencoder" basedir="." default="main">
+
+	<presetdef name="javac">
+		<javac includeantruntime="false" />
+	</presetdef>
+	
+    <property name="src.dir"     value="org" />
+    <property name="build.dir"   value="build" />
+    <property name="classes.dir" value="${build.dir}/classes" />
+    <property name="jar.dir"     value="${build.dir}/jar" />
+
+    <property name="main-class"  value="org.hak5.ducky.Encoder" />
+
+    <target name="clean" description="Cleans generated files">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <target name="compile" description="Compiles .java source files">
+        <mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" />
+    </target>
+
+    <target name="jar" depends="compile" description="Archives .class files in a JAR archive">
+        <mkdir dir="${jar.dir}" />
+    	
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar" description="Executes JAR archive">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true" />
+    </target>
+
+    <target name="clean-build" depends="clean,jar" description="Cleans build directory before building JAR archive" />
+
+    <target name="main" depends="clean,run" description="Default target" />
+</project>
