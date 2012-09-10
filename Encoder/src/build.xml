@@ -1,8 +1,8 @@
 <project name="duckencoder" basedir="." default="main">
 
-	<presetdef name="javac">
-		<javac includeantruntime="false" />
-	</presetdef>
+    <presetdef name="javac">
+        <javac includeantruntime="false" />
+    </presetdef>
 	
     <property name="src.dir"     value="org" />
     <property name="build.dir"   value="build" />
