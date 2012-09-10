@@ -305,8 +305,12 @@ public class State {
                 	if (instr.equals(cmd.getName())
                             || instr.equals(cmd.getAltName())) {
 
-                        // Process command
-                        cmd.action(this, currInstruction[1]);
+                        // XXX Is it wise to ignore this exception?
+                        try {
+                            // Process command
+                            cmd.action(this, currInstruction[1]);
+                        } catch (ArrayIndexOutOfBoundsException e) { // Ignore exception
+                        }
                     }
                 }
 
