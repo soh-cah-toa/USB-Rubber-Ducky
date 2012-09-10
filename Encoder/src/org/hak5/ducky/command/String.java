@@ -17,8 +17,7 @@ public class String implements Command {
 
     @Override
     public void action(State state, java.lang.String args) {
-        // XXX Could state.getCurrentInstruction() be replaced with args?
-        for (int j = 0; j < state.getCurrentInstruction().length(); j++) {
+        for (int j = 0; j < args.length(); j++) {
             char c = args.charAt(j);
             state.addCharToFile(c);
 

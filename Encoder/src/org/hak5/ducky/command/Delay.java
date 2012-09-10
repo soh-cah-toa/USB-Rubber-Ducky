@@ -16,8 +16,7 @@ public class Delay implements Command {
 
     @Override
     public void action(State state, java.lang.String args) {
-        // XXX Could state.getCurrentInstruction() be replaced with args?
-        int delay = Integer.parseInt(state.getCurrentInstruction().trim());
+        int delay = Integer.parseInt(args.trim());
 
         while (delay > 0) {
             state.addByteToFile(0x00);
