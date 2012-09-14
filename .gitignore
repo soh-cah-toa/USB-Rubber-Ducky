@@ -1,3 +1,5 @@
 *.class
 Encoder/.metadata/*
 Encoder/src/build/*
+
+*.swp
