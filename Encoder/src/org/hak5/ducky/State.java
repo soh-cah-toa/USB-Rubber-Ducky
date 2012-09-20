@@ -133,11 +133,11 @@ public class State {
     public void addCharToFile(char c) {
         byte value = (byte) 0x99;
 
-        if ((int) c >= 97 && (int) c <= 122)     // Upper-case letters
+        if ((int) c >= 97 && (int) c <= 122)     // Lower-case letters
             value = (byte) (c - 0x5D);
-        else if ((int) c >= 65 && (int) c <= 90) // Lower-case letters
+        else if ((int) c >= 65 && (int) c <= 90) // Upper-case letters
             value = (byte) (c - 0x3D);
-        else if ((int) c >= 49 && (int) c <= 57) // Digits 0-9
+        else if ((int) c >= 49 && (int) c <= 57) // Digits 1-9
             value = (byte) (c - 0x13);
         else                                     // Punctuation
             switch (c) {
