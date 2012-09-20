@@ -57,8 +57,7 @@ public class State {
         file = new ArrayList<Byte>();
         this.outFile = outFile;
 
-        defaultDelay  = 0;
-        delayOverride = false;
+        defaultDelay = 0;
 
         commandList = CommandList.newInstance();
     }
@@ -289,6 +288,8 @@ public class State {
         // Loop through file contents, line by line
         for (int i = 0; i < instructions.length; i++) {
             try {
+            	delayOverride = false;
+            	
                 String commentCheck = instructions[i].substring(0, 2);
 
                 // Ignore C++ style comments
