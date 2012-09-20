@@ -61,7 +61,6 @@ public class State {
         delayOverride = false;
 
         commandList = CommandList.newInstance();
-        currentLine = new String[2];
     }
 
     /**
@@ -314,12 +313,11 @@ public class State {
                 	if (instr.equals(cmd.getName())
                             || instr.equals(cmd.getAltName())) {
 
-                        // XXX Is it wise to ignore this exception?
-                        try {
-                            // Process command
+                        // Process command
+                        if (currentLine.length == 1)
+                            cmd.action(this, "");
+                        else
                             cmd.action(this, currentLine[1]);
-                        } catch (ArrayIndexOutOfBoundsException e) { // Ignore exception
-                        }
                     }
                 }
 
@@ -346,6 +344,7 @@ public class State {
                     }
                 }
             } catch (Exception e) {
+                // FIXME Improve error message to be more descriptive
                 String errMsg = "[ERROR] Invalid command on line " + (i + 1);
                 System.err.println(errMsg);
             }
